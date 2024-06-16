@@ -1,2 +1,2 @@
 # tachibane-overlay
-An ebuild repository. Pulbic for ease of use.
+An ebuild repository. Public for ease of use.
