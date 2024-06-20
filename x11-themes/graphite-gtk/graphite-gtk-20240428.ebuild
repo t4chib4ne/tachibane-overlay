@@ -10,7 +10,7 @@ MY_PN="${PN^}"
 DESCRIPTION="Graphite gtk theme"
 HOMEPAGE="https://github.com/vinceliuice/Graphite-gtk-theme"
 SRC_URI="https://github.com/vinceliuice/Graphite-gtk-theme/archive/refs/tags/${MY_PV}.tar.gz"
-S="${WORKDIR}/${MY_PN}-${MY_PV}"
+S="${WORKDIR}/${MY_PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
