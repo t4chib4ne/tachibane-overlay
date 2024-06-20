@@ -19,7 +19,7 @@ IUSE="gnome gtk2"
 
 DEPEND="gtk2? ( x11-themes/gtk-engines-murrine )
 		gnome? ( x11-themes/gnome-themes-standard )
-		>=gtk+-3.20:3"
+		>=x11-libs/gtk+-3.20:3"
 RDEPEND="${DEPEND}"
 BDEPEND="
 		app-shells/bash
