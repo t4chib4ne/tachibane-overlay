@@ -28,5 +28,5 @@ BDEPEND="
 
 src_install() {
 	dodir /usr/share/themes
-	./install.sh -d "${ED}/usr/share/themes" --theme grey yellow orange teal --tweaks rimless normal || die "Error running install.sh"
+	./install.sh -d "${ED}/usr/share/themes" --theme 'default' yellow orange teal --tweaks rimless normal || die "Error running install.sh"
 }
