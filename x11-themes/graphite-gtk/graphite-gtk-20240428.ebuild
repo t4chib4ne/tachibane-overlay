@@ -24,3 +24,8 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 		app-shells/bash
 		dev-lang/sassc"
+
+src_install() {
+	dodir /usr/share/themes
+	./install.sh -d "${ED}/usr/share/themes --theme all --tweaks rimless normal"
+}
