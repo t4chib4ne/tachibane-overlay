@@ -3,14 +3,24 @@
 
 EAPI=8
 
-DESCRIPTION=""
-HOMEPAGE=""
-SRC_URI=""
+# eg. 20211225 -> 2021-12-25
+MY_PV="${PV:0:4}-${PV:4:2}-${PV:6:2}"
+MY_PN="${PN^}"
 
-LICENSE=""
+DESCRIPTION="Graphite gtk theme"
+HOMEPAGE="https://github.com/vinceliuice/Graphite-gtk-theme"
+SRC_URI="https://github.com/vinceliuice/Graphite-gtk-theme/archive/refs/tags/${MY_PV}.tar.gz"
+
+LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~amr64 ~ppc64"
 
-DEPEND=""
+IUSE="gnome gtk2"
+
+DEPEND="gtk2? (x11-themes/gtk-engines-murrine)
+		gnome? (x11-themes/gnome-themes-standard)
+		>=gtk+-3.20:3"
 RDEPEND="${DEPEND}"
-BDEPEND=""
+BDEPEND="
+		app-shells/bash
+		dev-lang/sassc"
