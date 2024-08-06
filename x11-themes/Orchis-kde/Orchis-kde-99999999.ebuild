@@ -31,5 +31,5 @@ BDEPEND="app-shells/bash"
 src_install() {
 	dodir /usr/share/Kvantum
 
-	cp -r Kvantum/* /usr/share/Kvantum
+	cp -r Kvantum/* "${ED}/usr/share/Kvantum"
 }
