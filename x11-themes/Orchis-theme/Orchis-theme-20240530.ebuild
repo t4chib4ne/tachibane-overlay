@@ -35,5 +35,5 @@ src_install() {
 
 	dodir /usr/share/themes
 
-	./install.sh -d "${ED}/usr/share/themes" -i 'gentoo' --theme 'all' --tweaks primary || die "Error running install.sh"
+	./install.sh -d "${ED}/usr/share/themes" --theme 'all' --tweaks 'primary' || die "Error running install.sh"
 }
