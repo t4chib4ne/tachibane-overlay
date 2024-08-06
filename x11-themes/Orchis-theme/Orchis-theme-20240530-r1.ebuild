@@ -38,8 +38,8 @@ src_install() {
 	local primary_option=''
 
 	if use primary; then
-		primary_option="--tweaks 'primary'"
+		primary_option=" --tweaks 'primary'"
 	fi
 
-	./install.sh -d "${ED}/usr/share/themes" --theme 'all' "$primary_option" || die "Error running install.sh"
+	./install.sh -d "${ED}/usr/share/themes" --theme 'all'"$primary_option" || die "Error running install.sh"
 }
