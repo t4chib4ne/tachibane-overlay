@@ -20,7 +20,7 @@ else
 	S="${WORKDIR}/${MY_PN}-${MY_PV}"
 fi
 
-LICENSE="GPL-3.0"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 
