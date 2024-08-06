@@ -16,7 +16,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~ppc64"
 
-IUSE="gnome gtk2"
+IUSE="gnome gtk2 primary"
 
 DEPEND="gtk2? ( x11-themes/gtk-engines-murrine )
 		gnome? ( x11-themes/gnome-themes-standard )
@@ -35,5 +35,11 @@ src_install() {
 
 	dodir /usr/share/themes
 
-	./install.sh -d "${ED}/usr/share/themes" --theme 'all' --tweaks 'primary' || die "Error running install.sh"
+	local primary_option=''
+
+	if use primary; then
+		primary_option="--tweaks 'primary'"
+	fi
+
+	./install.sh -d "${ED}/usr/share/themes" --theme 'all' "$primary_option" || die "Error running install.sh"
 }
