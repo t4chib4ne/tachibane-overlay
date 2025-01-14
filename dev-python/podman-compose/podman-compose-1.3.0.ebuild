@@ -6,7 +6,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 inherit distutils-r1
 
 DESCRIPTION="A script to run docker-compose.yml using Podman"
@@ -15,7 +15,7 @@ SRC_URI="https://github.com/containers/${PN}/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 
 DEPEND="
 	|| (
