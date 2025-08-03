@@ -13,7 +13,7 @@ DESCRIPTION="Certbot authentication plugin for dns-01 validation via Hetzner."
 HOMEPAGE="https://github.com/t4chib4ne/certbot-dns-hetzner"
 SRC_URI="https://github.com/t4chib4ne/certbot-dns-hetzner/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE="GPL-2.0"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
