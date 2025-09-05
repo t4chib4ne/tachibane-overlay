@@ -6,8 +6,6 @@
 EAPI=8
 
 CRATES=" "
-ECARGO_OFFLINE=1
-ECARGO_VENDOR="${WORKDIR}/${P}/vendor"
 RUST_MIN_VER="1.86.0"
 
 inherit cargo
@@ -30,6 +28,13 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_unpack() {
+	export ECARGO_OFFLINE=1
+	export ECARGO_VENDOR="${WORKDIR}/${P}/vendor"
+
+	default
+}
 
 src_prepare() {
 	default
