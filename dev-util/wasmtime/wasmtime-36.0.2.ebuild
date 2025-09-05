@@ -25,6 +25,12 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="~amd64"
 
+DEPEND="
+	app-arch/zstd:=
+"
+RDEPEND="${DEPEND}"
+BDEPEND=""
+
 src_prepare() {
 	default
 
