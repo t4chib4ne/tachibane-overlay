@@ -68,3 +68,7 @@ src_install() {
 
 	cmake_src_install
 }
+
+src_test() {
+	use test && cmake_src_test
+}
