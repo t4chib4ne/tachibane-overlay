@@ -10,6 +10,9 @@ RUST_MIN_VER="1.86.0"
 
 inherit cargo
 
+ECARGO_OFFLINE=1
+ECARGO_VENDOR="${WORKDIR}/${P}/vendor"
+
 DESCRIPTION="Command-line interface for Wasmtime"
 HOMEPAGE="https://wasmtime.dev"
 SRC_URI="https://github.com/bytecodealliance/wasmtime/releases/download/v${PV}/wasmtime-v${PV}-src.tar.gz"
@@ -28,13 +31,6 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
-src_unpack() {
-	export ECARGO_OFFLINE=1
-	export ECARGO_VENDOR="${WORKDIR}/${P}/vendor"
-
-	default
-}
 
 src_prepare() {
 	default
