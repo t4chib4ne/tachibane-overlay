@@ -11,7 +11,6 @@ RUST_MIN_VER="1.86.0"
 inherit cargo
 
 ECARGO_OFFLINE=1
-ECARGO_VENDOR="${WORKDIR}/${P}/vendor"
 
 DESCRIPTION="Command-line interface for Wasmtime"
 HOMEPAGE="https://wasmtime.dev"
@@ -37,6 +36,7 @@ src_prepare() {
 
 	rmdir "${WORKDIR}/${P}" || die 'could not clear target src dir'
 	ln -s "${WORKDIR}/wasmtime-v${PV}-src" "${WORKDIR}/${P}" || die 'could not symlink src'
+	ln -s "${WORKDIR}/${P}/vendor/"* "${CARGO_HOME}/gentoo" || die 'could not symlink vendor'
 }
 
 src_configure() {
