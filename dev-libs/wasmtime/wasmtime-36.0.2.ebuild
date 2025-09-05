@@ -19,6 +19,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+shared fastest test"
 
+PROPERTIES="test_network"
+RESTRICT="!test? ( test )"
+
 DEPEND="
 	app-arch/bzip2
 	app-arch/zstd:=
