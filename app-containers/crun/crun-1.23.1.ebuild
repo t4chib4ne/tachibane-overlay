@@ -20,12 +20,11 @@ fi
 
 LICENSE="GPL-2+ LGPL-2.1+"
 SLOT="0"
-IUSE="apparmor +bpf +caps criu +seccomp selinux systemd static-libs wasmtime"
+IUSE="+bpf +caps criu +seccomp selinux systemd static-libs wasmtime"
 
 DEPEND="
 	dev-libs/yajl:=
 	sys-kernel/linux-headers
-	apparmor? ( sys-libs/libapparmor )
 	caps? ( sys-libs/libcap )
 	criu? ( >=sys-process/criu-3.15 )
 	seccomp? ( sys-libs/libseccomp )
@@ -49,12 +48,10 @@ src_prepare() {
 src_configure() {
 	local myeconfargs=(
 		--cache-file="${S}"/config.cache
-		$(use_enable apparmor)
 		$(use_enable bpf)
 		$(use_enable caps)
 		$(use_enable criu)
 		$(use_enable seccomp)
-		$(use_enable selinux)
 		$(use_enable systemd)
 		--enable-shared
 		$(use_enable static-libs static)
