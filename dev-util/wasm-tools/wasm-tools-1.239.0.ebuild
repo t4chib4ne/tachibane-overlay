@@ -280,7 +280,7 @@ CRATES="
 	zerovec@0.10.4
 "
 
-RUST_MIN_VERSION="1.76.0"
+RUST_MIN_VER="1.85.0"
 
 inherit git-r3 cargo
 
@@ -306,8 +306,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-RESTRICT="!test? ( test )"
-
 src_unpack() {
 	default
 	cargo_src_unpack
@@ -321,4 +319,8 @@ src_unpack() {
 
 src_install() {
 	dobin "$(cargo_target_dir)/wasm-tools"
+}
+
+src_test() {
+	RUST_BACKTRACE=full cargo_src_test
 }
