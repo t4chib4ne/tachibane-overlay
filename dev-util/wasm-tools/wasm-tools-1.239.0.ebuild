@@ -306,6 +306,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
+RESTRICT="!test? ( test )"
+
 src_unpack() {
 	default
 	cargo_src_unpack
@@ -319,8 +321,4 @@ src_unpack() {
 
 src_install() {
 	dobin "$(cargo_target_dir)/wasm-tools"
-}
-
-src_test() {
-	RUST_BACKTRACE=full cargo_src_test
 }
