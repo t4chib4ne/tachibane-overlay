@@ -17,6 +17,14 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+src_prepare() {
+	default
+
+	# removes the CFLAGS so make.conf configuration
+	# can be applied.
+	sed -i 's/^CFLAGS=.*//g' Makefile || die
+}
+
 src_compile() {
 	if use tiny; then
 		emake tiny || die
