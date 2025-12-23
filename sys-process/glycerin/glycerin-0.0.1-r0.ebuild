@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_prepare() {
-	default()
+	default
 
 	# removes the CFLAGS so make.conf configuration
 	# can be applied.
