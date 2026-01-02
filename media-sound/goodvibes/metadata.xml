@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<changelog>https://gitlab.com/goodvibes/goodvibes/-/blob/master/NEWS</changelog>
+		<remote-id type="gitlab">goodvibes/goodvibes</remote-id>
+	</upstream>
+	<use>
+		<flag name="hotkeys">Enable hotkeys</flag>
+		<flag name="inhibitor">Enable screen locking inhibitor</flag>
+		<flag name="notifications">Enable desktop notifications</flag>
+		<flag name="hls">To play HLS streams</flag>
+	</use>
+</pkgmetadata>
