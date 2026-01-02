@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson git-r3 xdg-utils
+inherit meson git-r3 xdg-utils gnome2-utils
 
 DESCRIPTION="A Lightweight Radio Player."
 HOMEPAGE="https://gitlab.com/goodvibes/goodvibes"
@@ -37,7 +37,7 @@ DEPEND=">=dev-libs/glib-2.66:2
 		hotkeys? ( >=dev-libs/keybinder-3.0.0 )"
 RDEPEND="${DEPEND}
 		>=media-libs/gst-plugins-bad-${MY_GST_VER}:${MY_GST_SLOT}
-		gnome-base/dconf
+		gui? ( gnome-base/dconf )
 		hls? ( >=media-libs/gst-plugins-ugly-${MY_GST_VER}:${MY_GST_SLOT} )
 		pulseaudio? ( media-libs/libpulse )
 		pipewire? ( media-video/pipewire[gstreamer] )
@@ -59,11 +59,17 @@ src_configure() {
 }
 
 pkg_postinst() {
-	xdg_desktop_database_update
-	xdg_icon_cache_update
+	if use gui:
+		xdg_desktop_database_update
+		xdg_icon_cache_update
+		gnome2_schemas_update
+	fi
 }
 
 pkg_postrm() {
-	xdg_desktop_database_update
-	xdg_icon_cache_update
+	if use gui:
+		xdg_desktop_database_update
+		xdg_icon_cache_update
+		gnome2_schemas_update
+	fi
 }
