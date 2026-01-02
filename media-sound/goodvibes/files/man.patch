@@ -1,22 +1,25 @@
 diff --git a/data/meson.build b/data/meson.build
-index 02b0091..2901b89 100644
+index 02b0091..c353646 100644
 --- a/data/meson.build
 +++ b/data/meson.build
-@@ -196,7 +196,6 @@ manual_conf.set('version', gv_version)
+@@ -196,7 +196,7 @@ manual_conf.set('version', gv_version)
  manual_conf.set('homepage', gv_homepage)
  manual_conf.set('author', gv_author_name)
  
 -gzip = find_program('gzip', required: true)
++sleep = find_program('sleep', required: true)
  
  foreach exe: [ 'goodvibes', 'goodvibes-client' ]
    tmp_man_file = configure_file(
-@@ -205,8 +204,7 @@ foreach exe: [ 'goodvibes', 'goodvibes-client' ]
+@@ -205,8 +205,8 @@ foreach exe: [ 'goodvibes', 'goodvibes-client' ]
      configuration: manual_conf,
    )
    custom_target('man-' + exe,
 -    command: [ gzip, '--keep', '--force', tmp_man_file ],
 -    output: exe + '.1.gz',
++    command: [ sleep, '0' ],
 +    output: exe + '.1',
      install: true,
      install_dir: manuals_dir,
    )
+
