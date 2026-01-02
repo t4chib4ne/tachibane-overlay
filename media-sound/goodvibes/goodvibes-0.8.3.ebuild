@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson git-r3
+inherit meson git-r3 xdg-utils
 
 DESCRIPTION="A Lightweight Radio Player."
 HOMEPAGE="https://gitlab.com/goodvibes/goodvibes"
@@ -11,6 +11,10 @@ HOMEPAGE="https://gitlab.com/goodvibes/goodvibes"
 # There are no releases on GitLab?
 EGIT_REPO_URI="https://gitlab.com/goodvibes/goodvibes.git"
 EGIT_COMMIT="v${PV}"
+
+PATCHES=(
+	"${FILESDIR}"/man.patch
+)
 
 LICENSE="GPL-3+"
 SLOT="0"
@@ -52,4 +56,14 @@ src_configure() {
 	)
 
 	meson_src_configure
+}
+
+pkg_postinst() {
+	xdg_desktop_database_update
+	xdg_icon_cache_update
+}
+
+pkg_postrm() {
+	xdg_desktop_database_update
+	xdg_icon_cache_update
 }
