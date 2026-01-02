@@ -59,7 +59,7 @@ src_configure() {
 }
 
 pkg_postinst() {
-	if use gui:
+	if use gui; then
 		xdg_desktop_database_update
 		xdg_icon_cache_update
 		gnome2_schemas_update
@@ -67,7 +67,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	if use gui:
+	if use gui; then
 		xdg_desktop_database_update
 		xdg_icon_cache_update
 		gnome2_schemas_update
