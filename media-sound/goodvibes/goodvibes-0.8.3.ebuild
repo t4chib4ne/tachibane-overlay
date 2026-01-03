@@ -32,13 +32,13 @@ MY_GST_SLOT='1.0'
 DEPEND=">=dev-libs/glib-2.66:2
 		>=media-libs/gstreamer-${MY_GST_VER}:${MY_GST_SLOT}
 		>=media-libs/gst-plugins-base-${MY_GST_VER}:${MY_GST_SLOT}
-		>=media-libs/gst-plugins-soup-${MY_GST_VER}:${MY_GST_SLOT}
+		>=media-plugins/gst-plugins-soup-${MY_GST_VER}:${MY_GST_SLOT}
 		gui? ( >=x11-libs/gtk+-3.16:3 )
 		hotkeys? ( >=dev-libs/keybinder-3.0.0 )"
 RDEPEND="${DEPEND}
 		gui? ( gnome-base/dconf )
 		hls? ( >=media-libs/gst-plugins-ugly-${MY_GST_VER}:${MY_GST_SLOT} )
-		ffmpeg? ( >=media-libs/gst-plugins-libav-${MY_GST_VER}:${MY_GST_SLOT} )
+		ffmpeg? ( >=media-plugins/gst-plugins-libav-${MY_GST_VER}:${MY_GST_SLOT} )
 		bad? ( >=media-libs/gst-plugins-bad-${MY_GST_VER}:${MY_GST_SLOT} )
 		pulseaudio? ( media-libs/libpulse )
 		pipewire? ( media-video/pipewire[gstreamer] )
