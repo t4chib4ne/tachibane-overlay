@@ -19,7 +19,7 @@ PATCHES=(
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+gui hotkeys inhibitor notifications pulseaudio pipewire dbus hls ffmpeg +bad"
+IUSE="+gui hotkeys inhibitor notifications pulseaudio pipewire dbus +hls ffmpeg +bad"
 REQUIRED_USE="
 	hotkeys? ( gui )
 	inhibitor? ( gui )
