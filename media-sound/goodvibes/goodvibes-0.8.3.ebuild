@@ -37,7 +37,10 @@ DEPEND=">=dev-libs/glib-2.66:2
 		hotkeys? ( >=dev-libs/keybinder-3.0.0 )"
 RDEPEND="${DEPEND}
 		gui? ( gnome-base/dconf )
-		hls? ( >=media-plugins/gst-plugins-hls-${MY_GST_VER}:${MY_GST_SLOT} )
+		hls? (
+			>=media-plugins/gst-plugins-hls-${MY_GST_VER}:${MY_GST_SLOT}
+			>=media-plugins/gst-plugins-adaptivedemux2-${MY_GST_VER}:${MY_GST_SLOT}
+		)
 		ffmpeg? ( >=media-plugins/gst-plugins-libav-${MY_GST_VER}:${MY_GST_SLOT} )
 		bad? ( >=media-libs/gst-plugins-bad-${MY_GST_VER}:${MY_GST_SLOT} )
 		pulseaudio? ( media-libs/libpulse )
