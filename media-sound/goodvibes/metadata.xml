@@ -10,5 +10,6 @@
 		<flag name="inhibitor">Enable screen locking inhibitor</flag>
 		<flag name="notifications">Enable desktop notifications</flag>
 		<flag name="hls">To play HLS streams</flag>
+		<flag name="bad">Depend on bad gstreamer plugins for more codecs</flag>
 	</use>
 </pkgmetadata>

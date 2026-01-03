@@ -19,7 +19,7 @@ PATCHES=(
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+gui hotkeys inhibitor notifications pulseaudio pipewire dbus hls"
+IUSE="+gui hotkeys inhibitor notifications pulseaudio pipewire dbus hls ffmpeg +bad"
 REQUIRED_USE="
 	hotkeys? ( gui )
 	inhibitor? ( gui )
@@ -30,15 +30,16 @@ MY_GST_VER='1.24'
 MY_GST_SLOT='1.0'
 
 DEPEND=">=dev-libs/glib-2.66:2
-		>=net-libs/libsoup-3.0:3.0
 		>=media-libs/gstreamer-${MY_GST_VER}:${MY_GST_SLOT}
 		>=media-libs/gst-plugins-base-${MY_GST_VER}:${MY_GST_SLOT}
+		>=media-libs/gst-plugins-soup-${MY_GST_VER}:${MY_GST_SLOT}
 		gui? ( >=x11-libs/gtk+-3.16:3 )
 		hotkeys? ( >=dev-libs/keybinder-3.0.0 )"
 RDEPEND="${DEPEND}
-		>=media-libs/gst-plugins-bad-${MY_GST_VER}:${MY_GST_SLOT}
 		gui? ( gnome-base/dconf )
 		hls? ( >=media-libs/gst-plugins-ugly-${MY_GST_VER}:${MY_GST_SLOT} )
+		ffmpeg? ( >=media-libs/gst-plugins-libav-${MY_GST_VER}:${MY_GST_SLOT} )
+		bad? ( >=media-libs/gst-plugins-bad-${MY_GST_VER}:${MY_GST_SLOT} )
 		pulseaudio? ( media-libs/libpulse )
 		pipewire? ( media-video/pipewire[gstreamer] )
 		dbus? ( sys-apps/dbus )"
