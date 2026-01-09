@@ -5,12 +5,18 @@ EAPI=8
 
 DESCRIPTION="glycerin is a simple utility for logging a single application."
 HOMEPAGE="https://github.com/t4chib4ne/glycerin"
-SRC_URI="https://github.com/t4chib4ne/glycerin/archive/refs/tags/v${PV}.tar.gz"
+
+if [[ ${PV} == *9999* ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/t4chib4ne/glycerin.git"
+else
+	SRC_URI="https://github.com/t4chib4ne/glycerin/archive/refs/tags/v${PV}.tar.gz"
+fi
 
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="+man"
 
 DOCS=( README.md )
 DEPEND=""
@@ -29,4 +35,5 @@ src_install() {
 	dobin glycerin
 
 	einstalldocs
+	use man && doman glycerin.8
 }
