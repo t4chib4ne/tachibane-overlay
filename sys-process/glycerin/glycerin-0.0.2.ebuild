@@ -11,11 +11,11 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_REPO_URI="https://github.com/t4chib4ne/glycerin.git"
 else
 	SRC_URI="https://github.com/t4chib4ne/glycerin/archive/refs/tags/v${PV}.tar.gz"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE="+man"
 
 DOCS=( README.md )

@@ -11,11 +11,11 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_REPO_URI="https://github.com/leahneukirchen/nitro.git"
 else
 	SRC_URI="https://github.com/leahneukirchen/nitro/archive/refs/tags/v${PV}.tar.gz"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="0BSD"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE="+cli +man tiny"
 
 DOCS=( README.md NEWS.md )
