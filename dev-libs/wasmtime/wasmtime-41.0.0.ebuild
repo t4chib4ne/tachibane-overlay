@@ -5,7 +5,7 @@
 
 EAPI=8
 
-RUST_MIN_VER="1.86.0"
+RUST_MIN_VER="1.90.0"
 export OPENSSL_NO_VENDOR=1
 
 inherit cmake rust
@@ -36,7 +36,7 @@ BUILD_DIR="${S}/target/c-api"
 
 PATCHES=(
 	# Tries adding a SONAME to the the .so
-	"${FILESDIR}/${P}-fix-soname.patch"
+	"${FILESDIR}/wasmtime-fix-soname.patch"
 )
 
 src_configure() {
