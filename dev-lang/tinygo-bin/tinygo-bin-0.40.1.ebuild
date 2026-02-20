@@ -30,7 +30,7 @@ src_compile() {
 src_install() {
 	insinto /opt
 	doins -r tinygo
-	doenvd "${FILESDIR}/tinygo.env"
+	doenvd "${FILESDIR}/99tinygo"
 }
 
 pkg_postinst() {
