@@ -29,7 +29,11 @@ src_compile() {
 
 src_install() {
 	insinto /opt
+
 	doins -r tinygo
+	chmod +x /opt/tinygo/bin/tinygo
+	chmod +x /opt/tinygo/bin/wasm-opt
+
 	doenvd "${FILESDIR}/99tinygo"
 }
 
