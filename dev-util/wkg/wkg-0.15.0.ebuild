@@ -565,6 +565,8 @@ CRATES="
 	zvariant_utils@2.1.0
 "
 
+RUST_MIN_VER="1.88.0"
+
 inherit cargo
 
 DESCRIPTION="Wasm Package Tools CLI"
