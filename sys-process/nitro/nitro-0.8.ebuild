@@ -18,7 +18,7 @@ LICENSE="0BSD"
 SLOT="0"
 IUSE="+cli +man tiny"
 
-DOCS=( README.md NEWS.md )
+DOCS=( README.md NEWS.md SPAT.md )
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
