@@ -55,7 +55,7 @@ src_install() {
 		doins -r ${f}
 	done
 
-	for f in $(find "${D}/bin" -type f); do
+	for f in $(find "${D}/${MY_BASE_DIR}/bin" -type f); do
 		chmod +x ${f}
 	done
 
