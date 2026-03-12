@@ -507,7 +507,7 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="~amd64"
 
-DOCS=( README.md, LANGUAGE.md )
+DOCS=( README.md LANGUAGE.md )
 
 src_install() {
 	einstalldocs
