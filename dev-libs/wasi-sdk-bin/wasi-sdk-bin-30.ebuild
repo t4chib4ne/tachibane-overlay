@@ -55,7 +55,9 @@ src_install() {
 		doins -r ${f}
 	done
 
-	chmod +x ${D}/bin/*
+	for f in $(find "${D}/bin" -type f); do
+		chmod +x ${f}
+	done
 
 	dodoc "${DISTDIR}/README.md"
 }
