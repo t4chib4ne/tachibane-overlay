@@ -55,6 +55,8 @@ src_install() {
 		doins -r ${f}
 	done
 
+	chmod +x ${D}/bin/*
+
 	dodoc "${DISTDIR}/README.md"
 }
 
