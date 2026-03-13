@@ -709,7 +709,7 @@ CRATES="
 	zstd@0.13.3
 "
 
-RUST_MIN_VERSION="1.91.0"
+RUST_MIN_VER="1.91.0"
 
 inherit cargo
 
