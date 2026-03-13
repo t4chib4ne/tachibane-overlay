@@ -709,7 +709,7 @@ CRATES="
 	zstd@0.13.3
 "
 
-RUST_MIN_VERSION="1.92.0"
+RUST_MIN_VERSION="1.91.0"
 
 inherit cargo
 
@@ -756,9 +756,10 @@ src_configure() {
 		$(usev wasmer wasm-wasmer)
 		$(usev systemd)
 		v2
+		cgroupsv2_devices
 	)
 
-	cargo_src_configure --bin youki
+	cargo_src_configure --no-default-features --bin youki
 }
 
 src_install() {
