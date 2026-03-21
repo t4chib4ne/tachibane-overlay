@@ -8,6 +8,7 @@
 	<use>
 		<flag name="cgroups">Enable cgroups v2 support</flag>
 		<flag name="cgroups-devices">Enable granualar cgroups v2 devices</flag>
+		<flag name="wasmtime">Enable WASM support via builtin wasmtime</flag>
 		<flag name="wasmedge">Enable WASM support via builtin wasmedge</flag>
 		<flag name="wasmer">Enable WASM support via builtin wasmer</flag>
 	</use>
