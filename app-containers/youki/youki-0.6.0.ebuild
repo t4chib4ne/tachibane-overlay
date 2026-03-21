@@ -760,7 +760,7 @@ src_configure() {
 		$(usev cgroups-devices cgroupsv2_devices)
 	)
 
-	cargo_src_configure --no-default-features --release --bin youki
+	cargo_src_configure --no-default-features --bin youki
 }
 
 src_install() {
