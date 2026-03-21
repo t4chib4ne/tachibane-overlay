@@ -730,11 +730,12 @@ LICENSE+="
 "
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+seccomp wasmtime wasmedge wasmer systemd"
+IUSE="+seccomp +cgroups cgroups-devices wasmtime wasmedge wasmer systemd"
 REQUIRED_USE="
 	wasmtime? ( !wasmedge !wasmer )
 	wasmedge? ( !wasmtime !wasmer )
-	wasmer? ( !wasmtime !wasmedge )"
+	wasmer? ( !wasmtime !wasmedge )
+	cgroups-devices? ( cgroups )"
 
 DEPEND="
 	systemd? ( sys-apps/systemd )
@@ -755,11 +756,11 @@ src_configure() {
 		$(usev wasmedge wasm-wasmedge)
 		$(usev wasmer wasm-wasmer)
 		$(usev systemd)
-		v2
-		cgroupsv2_devices
+		$(usev cgroups v2)
+		$(usev cgroups-devices cgroupsv2_devices)
 	)
 
-	cargo_src_configure --no-default-features --bin youki
+	cargo_src_configure --no-default-features --release --bin youki
 }
 
 src_install() {
