@@ -11,5 +11,6 @@
 		<flag name="notifications">Enable desktop notifications</flag>
 		<flag name="hls">To play HLS streams</flag>
 		<flag name="bad">Depend on bad gstreamer plugins for more codecs</flag>
+		<flag name="pipewire">Enable Pipewire support via its alsa plugin</flag>
 	</use>
 </pkgmetadata>

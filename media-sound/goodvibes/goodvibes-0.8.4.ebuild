@@ -44,7 +44,7 @@ RDEPEND="${DEPEND}
 		ffmpeg? ( >=media-plugins/gst-plugins-libav-${MY_GST_VER}:${MY_GST_SLOT} )
 		bad? ( >=media-libs/gst-plugins-bad-${MY_GST_VER}:${MY_GST_SLOT} )
 		pulseaudio? ( media-libs/libpulse )
-		pipewire? ( media-video/pipewire[gstreamer] )
+		pipewire? ( media-video/pipewire[gstreamer,pipewire-alsa] )
 		dbus? ( sys-apps/dbus )"
 BDEPEND="dev-build/meson"
 
